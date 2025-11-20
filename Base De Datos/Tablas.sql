@@ -8,7 +8,8 @@ CREATE TABLE Carrera (
 
 
 CREATE TABLE Estudiante (
-    rut VARCHAR(12) PRIMARY KEY,
+    idEstudiante INT IDENTITY(1,1) PRIMARY KEY,
+    rut VARCHAR(12) NOT NULL,
     nombreCompleto VARCHAR(200) NOT NULL,
     anoLectivo VARCHAR(10),
     domicilio VARCHAR(50),
@@ -16,4 +17,16 @@ CREATE TABLE Estudiante (
     correoInstitucional VARCHAR(100) NOT NULL,
     idCarrera INT NOT NULL              -- FK a Carrera
 );
+
+
+CREATE TABLE CentroPractica (
+    idCentroPractica INT IDENTITY(1,1) PRIMARY KEY,
+    rutEmpresa VARCHAR(12) NOT NULL,
+    nombre VARCHAR(150) NOT NULL,
+    descripcion VARCHAR(500),
+    habilidadesEsperadas VARCHAR(MAX),
+    direccion VARCHAR(250) NOT NULL,
+);
+
+
 
