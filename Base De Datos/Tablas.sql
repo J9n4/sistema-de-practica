@@ -74,3 +74,12 @@ CREATE TABLE Bitacora (
 );
 
 
+CREATE TABLE InformeSupervisor (
+    idInformeS INT IDENTITY(1,1) PRIMARY KEY,
+    idPractica INT NOT NULL,              -- FK a Practica
+    idSupervisor VARCHAR(12) NOT NULL,   -- FK a Supervisor
+    enlaceInformeS VARCHAR(MAX) NOT NULL    -- URL de archivo 
+);
+
+
+
