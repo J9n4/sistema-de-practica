@@ -124,6 +124,9 @@ CREATE TABLE CompetenciaCentro (
 );
 
 
+ALTER TABLE Estudiante
+ADD CONSTRAINT FK_Estudiante_Carrera
+FOREIGN KEY (idCarrera) REFERENCES Carrera(idCarrera);
 
 
 
