@@ -89,3 +89,23 @@ CREATE TABLE InformeTutor (
     enlaceInformeT VARCHAR(MAX) NOT NULL  --URL de informe
 );
 
+
+CREATE TABLE CompetenciaDesarrollo (
+    idCompeDes INT IDENTITY(1,1) PRIMARY KEY,
+    categoria VARCHAR(30) NOT NULL       
+);
+
+
+
+CREATE TABLE CompetenciaPractica (
+    idCompePra INT IDENTITY(1,1) PRIMARY KEY,
+    idPractica INT NOT NULL,              -- FK a Practica
+    idCompeDes INT NOT NULL,              -- FK a CompetenciaDesarrollo
+    nivel VARCHAR(50),                    
+    fechaRegistro DATETIME DEFAULT GETDATE()
+);
+
+
+
+
+
