@@ -152,3 +152,8 @@ FOREIGN KEY (rutTutor) REFERENCES Tutor(rut);
 ALTER TABLE Bitacora
 ADD CONSTRAINT FK_Bitacora_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
+
+
+ALTER TABLE Bitacora
+ADD CONSTRAINT FK_Bitacora_Estudiante
+FOREIGN KEY (rutEstudiante) REFERENCES Estudiante(rut);
