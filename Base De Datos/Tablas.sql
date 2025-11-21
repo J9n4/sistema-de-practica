@@ -128,81 +128,73 @@ ALTER TABLE Estudiante
 ADD CONSTRAINT FK_Estudiante_Carrera
 FOREIGN KEY (idCarrera) REFERENCES Carrera(idCarrera);
 
+ALTER TABLE Tutor
+ADD CONSTRAINT FK_Tutor_Carrera
+FOREIGN KEY (idCarrera) REFERENCES Carrera(idCarrera);
 
-ALTER TABLE CentroPractica
-ADD CONSTRAINT FK_CentroPractica_Supervisor
-FOREIGN KEY (rutSupervisor) REFERENCES Supervisor(rut);
-
+ALTER TABLE Supervisor
+ADD CONSTRAINT FK_Supervisor_Centro
+FOREIGN KEY (idCentroPractica) REFERENCES CentroPractica(idCentroPractica);
 
 ALTER TABLE Practica
 ADD CONSTRAINT FK_Practica_Estudiante
-FOREIGN KEY (rutEstudiante) REFERENCES Estudiante(rut);
-
+FOREIGN KEY (idEstudiante) REFERENCES Estudiante(idEstudiante);
 
 ALTER TABLE Practica
-ADD CONSTRAINT FK_Practica_CentroPractica
+ADD CONSTRAINT FK_Practica_Centro
 FOREIGN KEY (idCentroPractica) REFERENCES CentroPractica(idCentroPractica);
-
 
 ALTER TABLE Practica
 ADD CONSTRAINT FK_Practica_Tutor
-FOREIGN KEY (rutTutor) REFERENCES Tutor(rut);
+FOREIGN KEY (idTutor) REFERENCES Tutor(idTutor);
 
+ALTER TABLE Practica
+ADD CONSTRAINT FK_Practica_Supervisor
+FOREIGN KEY (idSupervisor) REFERENCES Supervisor(idSupervisor);
 
 ALTER TABLE Bitacora
 ADD CONSTRAINT FK_Bitacora_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
 
-
 ALTER TABLE Bitacora
 ADD CONSTRAINT FK_Bitacora_Estudiante
-FOREIGN KEY (rutEstudiante) REFERENCES Estudiante(rut);
-
+FOREIGN KEY (idEstudiante) REFERENCES Estudiante(idEstudiante);
 
 ALTER TABLE InformeSupervisor
 ADD CONSTRAINT FK_InfSup_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
 
-
 ALTER TABLE InformeSupervisor
 ADD CONSTRAINT FK_InfSup_Supervisor
-FOREIGN KEY (rutSupervisor) REFERENCES Supervisor(rut);
-
+FOREIGN KEY (idSupervisor) REFERENCES Supervisor(idSupervisor);
 
 ALTER TABLE InformeTutor
 ADD CONSTRAINT FK_InfTut_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
 
-
 ALTER TABLE InformeTutor
 ADD CONSTRAINT FK_InfTut_Tutor
-FOREIGN KEY (rutTutor) REFERENCES Tutor(rut);
-
+FOREIGN KEY (idTutor) REFERENCES Tutor(idTutor);
 
 ALTER TABLE CompetenciaPractica
 ADD CONSTRAINT FK_CompePra_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
 
-
 ALTER TABLE CompetenciaPractica
 ADD CONSTRAINT FK_CompePra_CompeDes
 FOREIGN KEY (idCompeDes) REFERENCES CompetenciaDesarrollo(idCompeDes);
-
 
 ALTER TABLE EvaluacionArea
 ADD CONSTRAINT FK_EvalArea_Practica
 FOREIGN KEY (idPractica) REFERENCES Practica(idPractica);
 
-
 ALTER TABLE EvaluacionArea
 ADD CONSTRAINT FK_EvalArea_CompeDes
 FOREIGN KEY (idCompeDes) REFERENCES CompetenciaDesarrollo(idCompeDes);
 
-
 ALTER TABLE CompetenciaCentro
 ADD CONSTRAINT FK_CompCentro_Centro
 FOREIGN KEY (idCentroPractica) REFERENCES CentroPractica(idCentroPractica);
-
 
 ALTER TABLE CompetenciaCentro
 ADD CONSTRAINT FK_CompCentro_Evaluacion
