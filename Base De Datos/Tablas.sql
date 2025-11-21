@@ -25,7 +25,7 @@ CREATE TABLE CentroPractica (
     nombre VARCHAR(150) NOT NULL,
     descripcion VARCHAR(500),
     habilidadesEsperadas VARCHAR(MAX),
-    direccion VARCHAR(250) NOT NULL,
+    direccion VARCHAR(250) NOT NULL
 );
 
 
@@ -35,7 +35,7 @@ CREATE TABLE Tutor (
     nombre VARCHAR(150) NOT NULL,
     correo VARCHAR(200) NOT NULL,
     telefono VARCHAR(12),
-    idCarrera VARCHAR(50) NOT NULL --FK a Carrera
+    idCarrera INT NOT NULL --FK a Carrera
 );
 
 CREATE TABLE Supervisor (
