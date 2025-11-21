@@ -134,3 +134,6 @@ ADD CONSTRAINT FK_CentroPractica_Supervisor
 FOREIGN KEY (rutSupervisor) REFERENCES Supervisor(rut);
 
 
+ALTER TABLE Practica
+ADD CONSTRAINT FK_Practica_Estudiante
+FOREIGN KEY (rutEstudiante) REFERENCES Estudiante(rut);
