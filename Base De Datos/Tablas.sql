@@ -66,7 +66,7 @@ CREATE TABLE Practica (
 CREATE TABLE Bitacora (
     idBitacora INT IDENTITY(1,1) PRIMARY KEY,
     idPractica INT NOT NULL,              -- FK a Practica
-    idEstudiante VARCHAR(12) NOT NULL,   -- FK a Estudiante 
+    idEstudiante INT NOT NULL,   -- FK a Estudiante 
     habilidadesDesarrolladas VARCHAR(500) NOT NULL,
     desafios VARCHAR(500) NOT NULL,
     logros VARCHAR(500) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE InformeSupervisor (
 CREATE TABLE InformeTutor (
     idInformeT INT IDENTITY(1,1) PRIMARY KEY,
     idPractica INT NOT NULL,              -- FK a Practica
-    idTutor VARCHAR(12) NOT NULL,        -- FK a Tutor
+    idTutor INT NOT NULL,        -- FK a Tutor
     enlaceInformeT VARCHAR(MAX) NOT NULL  --URL de informe
 );
 
