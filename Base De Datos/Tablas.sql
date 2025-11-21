@@ -49,5 +49,17 @@ CREATE TABLE Supervisor (
 );
 
 
+CREATE TABLE Practica (
+    idPractica INT IDENTITY(1,1) PRIMARY KEY,
+    idEstudiante INT NOT NULL,   -- FK a Estudiante
+    idCentroPractica INT NOT NULL,        -- FK a CentroPractica
+    idTutor INT NOT NULL,            -- FK a Tutor
+    idSupervisor INT NOT NULL,       -- FK a Supervisor
+    tipo VARCHAR(30) NOT NULL,             --FK a inicial, intermedia o profesional
+    fechaDeInicio DATETIME DEFAULT GETDATE(),
+    fechaDeTermino DATETIME,
+    actividades VARCHAR(500) NOT NULL,
+    evidenciaImg VARCHAR(MAX) NOT NULL    
+);
 
 
