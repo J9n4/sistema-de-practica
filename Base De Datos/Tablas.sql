@@ -29,4 +29,13 @@ CREATE TABLE CentroPractica (
 );
 
 
+CREATE TABLE Tutor (
+    rut VARCHAR(12) PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    correo VARCHAR(200) NOT NULL,
+    telefono VARCHAR(12),
+    idCarrera VARCHAR(50) NOT NULL --FK a Carrera
+);
+
+
 
