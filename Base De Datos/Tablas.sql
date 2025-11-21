@@ -92,7 +92,7 @@ CREATE TABLE InformeTutor (
 
 CREATE TABLE CompetenciaDesarrollo (
     idCompeDes INT IDENTITY(1,1) PRIMARY KEY,
-    categoria VARCHAR(30) NOT NULL       
+    categoria VARCHAR(30) NOT NULL       --Tipo de competencia desarrollada (Técnica, Genérica, Blanda, Profesional)
 );
 
 
